@@ -5,7 +5,7 @@ import (
 	"github.com/maxwellzp/bot/internal/service/product"
 )
 
-var registeredCommands = map[string]func(c *Commander, msg *tgbotapi.Message){}
+// var registeredCommands = map[string]func(c *Commander, msg *tgbotapi.Message){}
 
 type Commander struct {
 	bot            *tgbotapi.BotAPI
@@ -22,20 +22,22 @@ func NewCommander(bot *tgbotapi.BotAPI, productService *product.Service) *Comman
 func (c *Commander) HandleUpdate(update tgbotapi.Update) {
 	if update.Message != nil { // If we got a message
 
-		command, ok := registeredCommands[update.Message.Command()]
-		if ok {
-			command(c, update.Message)
-		} else {
-			c.Default(update.Message)
-		}
-
-		// switch update.Message.Command() {
-		// case "help":
-		// 	c.Help(update.Message)
-		// case "list":
-		// 	c.List(update.Message)
-		// default:
+		// command, ok := registeredCommands[update.Message.Command()]
+		// if ok {
+		// 	command(c, update.Message)
+		// } else {
 		// 	c.Default(update.Message)
 		// }
+
+		switch update.Message.Command() {
+		case "help":
+			c.Help(update.Message)
+		case "list":
+			c.List(update.Message)
+		case "get":
+			c.Get(update.Message)
+		default:
+			c.Default(update.Message)
+		}
 	}
 }
