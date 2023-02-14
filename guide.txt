@@ -7,5 +7,38 @@ dev@dev-machine:/home/cx-components/bot$
 
 dev@dev-machine:/home/cx-components/bot$ git init
 
+dev@dev-machine:/home/cx-components/bot$ git add .
 
+dev@dev-machine:/home/cx-components/bot$ git commit -m "Initial commit"
+
+
+dev@dev-machine:/home/cx-components/bot$ git remote add origin https://github.com/maxwellzp/bot.git
+dev@dev-machine:/home/cx-components/bot$ git branch -M master
+dev@dev-machine:/home/cx-components/bot$ git push -u origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (8/8), 702 bytes | 702.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/maxwellzp/bot.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+dev@dev-machine:/home/cx-components/bot$ 
+
+
+
+https://github.com/go-telegram-bot-api/telegram-bot-api
+
+
+dev@dev-machine:/home/cx-components/bot$ go mod tidy
+go: finding module for package github.com/go-telegram-bot-api/telegram-bot-api/v5
+go: downloading github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1
+go: downloading github.com/go-telegram-bot-api/telegram-bot-api v4.6.4+incompatible
+go: found github.com/go-telegram-bot-api/telegram-bot-api/v5 in github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1
+
+
+dev@dev-machine:/home/cx-components/bot$ go get github.com/joho/godotenv
+go: downloading github.com/joho/godotenv v1.5.1
+go: added github.com/joho/godotenv v1.5.1
 
