@@ -12,7 +12,7 @@ import (
 func main() {
 	godotenv.Load()
 
-  	token := os.Getenv("S3_BUCKET")
+  	token := os.Getenv("TOKEN")
 
 	bot, err := tgbotapi.NewBotAPI(token)
 	if err != nil {
