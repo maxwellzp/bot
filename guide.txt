@@ -1,0 +1,11 @@
+dev@dev-machine:/home/cx-components/bot$ go mod init github.com/maxwellzp/bot
+go: creating new go.mod: module github.com/maxwellzp/bot
+go: to add module requirements and sums:
+        go mod tidy
+dev@dev-machine:/home/cx-components/bot$ 
+
+
+dev@dev-machine:/home/cx-components/bot$ git init
+
+
+
