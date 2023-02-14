@@ -1,6 +1,8 @@
 package commands
 
 import (
+	"fmt"
+
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/maxwellzp/bot/internal/service/product"
 )
@@ -20,6 +22,12 @@ func NewCommander(bot *tgbotapi.BotAPI, productService *product.Service) *Comman
 }
 
 func (c *Commander) HandleUpdate(update tgbotapi.Update) {
+	defer func() {
+
+		if panicValue := recover(); panicValue != nil {
+			fmt.Printf("recovered from panic: %v", panicValue)
+		}
+	}()
 	if update.Message != nil { // If we got a message
 
 		// command, ok := registeredCommands[update.Message.Command()]
